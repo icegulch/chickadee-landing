@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      {% if page.fileSlug == 'homepage' %}
+        {{ site.title }} | {{ site.tagline }}
+      {% elsif title %}
+        {{ title }} | {{ site.title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </title>
+    <link sizes="16x16" type="image/png" rel="icon" href="/images/favicon.png" />
+    <meta name="generator" content="{{ eleventy.generator }}">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} {% include "og.liquid" %} {% endcomment %}
+    {% comment %} {% include "site_icons.liquid" %} {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    {% capture css %}{% include "css/site.css" %}{% endcapture %}
+    <style>
+      {% if site.env == "production" %}
+        {{ css | cssmin }}
+      {% else %}
+        {{ css }}
+      {% endif %}
+    </style>
+  </head>
+  <body>
+    
+  <header>
+    <a href="/">
+      <img src="/images/chickadee-financial-logo.png" width="120" height="120" alt="Chickadee Financial logo">
+    </a>
+    {% if page.url != '/' %}
+      <h1>
+        {{ title }}
+      </h1>
+    {% endif %}
+  </header>
+
+  <main>
+    {{ content | markdownify }}
+    {% if page.url == '/' %}
+      <details>
+        <summary>
+          Be notified when we launch!
+        </summary>
+        <form class="be-notified-form" name="be-notified" netlify-honeypot="fu" action="/thank-you/" netlify>
+          <div hidden>
+            <label>Don’t fill this out: <input name="fu"></label>
+          </div>
+          <div class="form-field">
+            <input id="email" class="form-control" type="email" name="email" placeholder="poecile.atricapillus@chirp.us">
+          </div>
+          <button>
+            Send
+          </button>
+        </form>
+      </details>
+    {% endif %}
+  </main>
+
+  </body>
+</html>

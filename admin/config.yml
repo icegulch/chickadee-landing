@@ -1,0 +1,33 @@
+---
+backend:
+  name: git-gateway
+  branch: main
+
+show_preview_links: false
+
+media_folder: "src/images/" # Media files will be stored in the repo under static/images/
+public_folder: "/images/" # The src attribute for uploaded media will begin with /images/
+
+collections:
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: src/pages/
+    slug: ""
+    extension: md
+    create: false # Allow users to create new documents in this collection
+    delete: false # Allow users to delete items in this collection
+    editor:
+      preview: false
+    summary: "{{title}}"
+    fields: # The fields for each document, usually in front matter
+      - label: Title
+        name: title
+        widget: string
+      - label: Description
+        name: body
+        widget: markdown
+        editor_components: []
+        modes: [rich_text]
+        required: true
+    sortable_fields: ["commit_date", "title"]
