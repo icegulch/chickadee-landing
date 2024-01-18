@@ -209,6 +209,7 @@ main {
 
 header {
   padding-block: 1rem 2rem;
+  gap: 2rem 0;
 }
 
 header img {
@@ -294,6 +295,10 @@ main dl {
 
 main dl dt {
   font-weight: 700;
+}
+
+main summary {
+  cursor: pointer;
 }
 
 main summary::marker {
