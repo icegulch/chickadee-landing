@@ -1,6 +1,5 @@
 ---
 permalink: /thanks/
-layout: base
 title: Thanks for Contacting Us!
 ---
 
