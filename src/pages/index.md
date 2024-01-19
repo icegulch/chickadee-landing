@@ -1,10 +1,8 @@
 ---
 permalink: /
-title: Homepage
-last_modified: 2024-01-19T23:06:33.666Z
+title: Chickadee Financial
+last_modified: 2024-01-19T23:07:19.523Z
 ---
-Chickadee Financial
-
 <subheading>
 
 Chickadee Financial cupcake ipsum dolor sit amet dessert. Gingerbread marshmallow sugar plum cupcake gummies. Sesame snaps tiramisu soufflé I love lemon drops candy canes. 
